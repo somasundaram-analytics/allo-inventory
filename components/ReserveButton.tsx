@@ -7,16 +7,12 @@ export default function ReserveButton({
   productId: string
   warehouseId: string
 }) {
-
   async function reserve() {
-
     const res = await fetch("/api/reserve", {
       method: "POST",
-
       headers: {
         "Content-Type": "application/json"
       },
-
       body: JSON.stringify({
         productId,
         warehouseId,
@@ -31,9 +27,7 @@ export default function ReserveButton({
       return
     }
 
-    alert("Reservation created")
-
-    window.location.reload()
+    window.location.href = `/reservation/${data.id}`
   }
 
   return (
