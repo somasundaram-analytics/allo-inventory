@@ -2,7 +2,7 @@
 
 export default function ReserveButton({
   productId,
-  warehouseId
+  warehouseId,
 }: {
   productId: string
   warehouseId: string
@@ -11,13 +11,13 @@ export default function ReserveButton({
     const res = await fetch("/api/reserve", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         productId,
         warehouseId,
-        quantity: 1
-      })
+        quantity: 1,
+      }),
     })
 
     const data = await res.json()
