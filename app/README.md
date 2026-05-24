@@ -23,12 +23,13 @@ https://github.com/somasundaram-analytics/allo-inventory
 ## Features
 
 - Product inventory management
-- Multi-warehouse stock handling
+- Warehouse management
 - Reservation system
 - Reservation confirmation
 - Reservation release
 - Prevent over-reservation
 - Live stock updates
+- Reservation countdown page
 
 ---
 
@@ -37,6 +38,10 @@ https://github.com/somasundaram-analytics/allo-inventory
 ### Get Products
 
 GET /api/products
+
+### Get Warehouses
+
+GET /api/warehouses
 
 ### Create Reservation
 
@@ -49,6 +54,18 @@ POST /api/reserve/:id/confirm
 ### Release Reservation
 
 POST /api/reserve/:id/release
+
+---
+
+## Frontend
+
+- Product listing page
+- Reserve button
+- Reservation page
+- Confirm Purchase button
+- Cancel button
+- Countdown timer
+- Live UI updates
 
 ---
 
