@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import ReserveButton from "../components/ReserveButton"
 import { prisma } from "@/lib/prisma"
 
@@ -14,11 +16,18 @@ export default async function Home() {
 
   return (
     <div className="p-10 bg-black min-h-screen text-white">
-      <h1 className="text-3xl font-bold mb-5">Products</h1>
+      <h1 className="text-3xl font-bold mb-5">
+        Products
+      </h1>
 
       {products.map((product: any) => (
-        <div key={product.id} className="border p-5 mb-5 rounded">
-          <h2 className="text-xl font-bold">{product.name}</h2>
+        <div
+          key={product.id}
+          className="border p-5 mb-5 rounded"
+        >
+          <h2 className="text-xl font-bold">
+            {product.name}
+          </h2>
 
           {product.inventories.map((inv: any) => (
             <div key={inv.id} className="mt-3">
