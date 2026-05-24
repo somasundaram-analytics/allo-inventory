@@ -1,23 +1,33 @@
 # Allo Inventory Reservation System
 
+## Live URL
+
+https://allo-inventory-git-main-allo-inventory-s-projects.vercel.app
+
+## GitHub Repository
+
+https://github.com/somasundaram-analytics/allo-inventory
+
+---
+
 ## Tech Stack
 
 - Next.js
 - TypeScript
-- PostgreSQL
 - Prisma
-- Tailwind CSS
+- PostgreSQL (Neon)
+- Vercel
 
 ---
 
 ## Features
 
-- Product listing
-- Inventory management
+- Product inventory management
+- Multi-warehouse stock handling
 - Reservation system
-- Confirm reservation
-- Release reservation
-- Concurrency-safe reservation logic
+- Reservation confirmation
+- Reservation release
+- Prevent over-reservation
 - Live stock updates
 
 ---
@@ -28,29 +38,13 @@
 
 GET /api/products
 
----
-
 ### Create Reservation
 
 POST /api/reserve
 
-Example Body:
-
-```json
-{
-  "productId": "...",
-  "warehouseId": "...",
-  "quantity": 1
-}
-```
-
----
-
 ### Confirm Reservation
 
 POST /api/reserve/:id/confirm
-
----
 
 ### Release Reservation
 
@@ -58,34 +52,8 @@ POST /api/reserve/:id/release
 
 ---
 
-## Run Project
-
-Install dependencies:
+## Running Locally
 
 ```bash
 npm install
-```
-
-Run server:
-
-```bash
 npm run dev
-```
-
----
-
-## Database
-
-PostgreSQL with Prisma ORM.
-
----
-
-## Concurrency Handling
-
-Used PostgreSQL row locking with:
-
-```sql
-FOR UPDATE
-```
-
-inside Prisma transaction to prevent double reservation.
